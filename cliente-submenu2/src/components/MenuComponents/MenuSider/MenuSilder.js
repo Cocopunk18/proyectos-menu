@@ -3,7 +3,7 @@ import { Layout, Menu } from 'antd';
 import {
   HomeOutlined,
   TeamOutlined,
-} from '@ant-design/icons';
+} from "@ant-design/icons";
 import { useLocation, useNavigate } from 'react-router-dom';
 import "./MenuSilder.scss";
 
@@ -15,18 +15,45 @@ export const MenuSider = (props) => {
   const menuItems = [
     {
       key: "clientes",
-      icon: <HomeOutlined/>,
+      icon: <TeamOutlined />,
       label: "Clientes",
       subMenu: [
         {
           key: "clientes/lista",
-          icon: <TeamOutlined/>,
+          icon: <TeamOutlined />,
           label: "Lista de clientes",
         },
-        { 
-          key: "clientes/nuevo", 
-          icon: <TeamOutlined/>, 
-          label: "Nuevo cliente" 
+        {
+          key: "clientes/nuevo",
+          icon: <TeamOutlined />,
+          label: "Nuevo cliente",
+        },
+      ],
+    },
+    {
+      key: "Servicios",
+      icon: <HomeOutlined />,
+      label: "Servicios",
+      subMenu: [
+        {
+          key: "servicios/listar",
+          icon: <HomeOutlined />,
+          label: "Consultar clientes",
+        },
+        {
+          key: "servicios/crear",
+          icon: <HomeOutlined />,
+          label: "Crear cliente",
+        },
+        {
+          key: "servicios/modificar",
+          icon: <HomeOutlined />,
+          label: "Modificar cliente",
+        },
+        {
+          key: "servicios/eliminar",
+          icon: <HomeOutlined />,
+          label: "Eliminar cliente",
         },
       ],
     },
