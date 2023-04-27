@@ -1,0 +1,42 @@
+@import "../../../scss/index.scss";
+
+.menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-color: rgb(253, 223, 242);
+    height: 50px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+    &.menu-top-collapsed {
+        padding: 0;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+        height: 50px;
+
+        &__logo {
+            width: 70px;
+            padding: 0 10px;
+        }
+    }
+
+    button {
+        margin-left: 5px;
+        cursor: pointer;
+        font-size: 20px;
+
+        &:hover {
+            color: rgb(133, 9, 118);
+        }
+
+        &:focus,
+        &:active {
+            color: rgb(139, 0, 100);
+        }
+    }
+}
