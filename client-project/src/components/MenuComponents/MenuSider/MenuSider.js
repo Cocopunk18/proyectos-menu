@@ -15,6 +15,7 @@ export const MenuSider = (props) => {
 
   const menuItems = [
     { key: "users", icon: <HomeOutlined />, label: "Gestión de usuarios" },
+   // { key: "registro", icon: <HomeOutlined />, label: "Registro de usuarios" },
     {
       key: "products",
       icon: <TeamOutlined />,
@@ -31,6 +32,23 @@ export const MenuSider = (props) => {
           label: "Lista de clientes",
         },
         { key: "clients/new", icon: <TeamOutlined />, label: "Nuevo cliente" },
+      ],
+    },
+    {
+      key: "products",
+      icon: <AppstoreOutlined />,
+      label: "Productos",
+      subMenu: [
+        {
+          key: "Listar",
+          icon: <TeamOutlined />,
+          label: "Lista de productos",
+        },
+        {
+          key: "products/new",
+          icon: <TeamOutlined />,
+          label: "Nuevo producto",
+        },
       ],
     },
     {

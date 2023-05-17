@@ -26,17 +26,20 @@
     }
 
     button {
+       
+    }
+    .menu-top__right {
         margin-left: 5px;
-        cursor: pointer;
-        font-size: 20px;
-
-        &:hover {
-            color: rgb(133, 9, 118);
-        }
-
-        &:focus,
-        &:active {
-            color: rgb(139, 0, 100);
-        }
+            cursor: pointer;
+            font-size: 20px;
+        
+            &:hover {
+                color: rgb(133, 9, 118);
+            }
+        
+            &:focus,
+            &:active {
+                color: rgb(139, 0, 100);
+            }
     }
 }
