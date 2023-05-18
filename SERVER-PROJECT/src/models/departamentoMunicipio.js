@@ -11,3 +11,4 @@ module.exports = mongoose.model(
     departamentoMunicipioSchema
 );
 
+//module.exports = mongoose.model("User", departamentoMunicipioSchema);

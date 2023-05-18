@@ -17,8 +17,7 @@ el backend y el front end a la vez */
 app.use(cors());
 console.log(`api/${API_VERSION}/`);
 app.use(`/api/${API_VERSION}/auth`, authRoutes);
-app.use(`/api/${API_VERSION}/`, departamentoMunicipio);
+app.use(`/api/${API_VERSION}/`,departamentoMunicipio);
 console.log(`/api/${API_VERSION}/datosabiertos`);
-//console.log(`/api/${API_VERSION}/departamento/:departamento/municipio/:municipio`);
 
 module.exports = app;

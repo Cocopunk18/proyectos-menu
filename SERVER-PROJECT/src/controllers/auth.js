@@ -9,7 +9,7 @@ const register = async (req, res) => {
     const { firstname, lastname, email, password, departamento, municipio } = req.body;
     if (!email) return res.status(400).send({ msg: "El email es requerido" });
     if (!departamento) return res.status(400).send({ msg: "El departamento es requerido" });
-    if (!municipio) return res.status(400).send({ msg: "El departamento es requerido" });
+    if (!municipio) return res.status(400).send({ msg: "El municipio es requerido" });
     if (!password) return res.status(400).send({ msg: "La contraseña es requerido" });
 
     const salt = bcrypt.genSaltSync(10);
@@ -77,10 +77,64 @@ function refreshAccessToken(req, res) {
         }
     });
 }
+//departamentos y municipios
+/*const getDepartamentos = async (req, res) => {
+    try {
+        const departamentos = await departamentoMunicipio.find(
+        {},
+        { departamento: 1, _id: 0}
+        );
+        res.status(200).send(departamentos);
+    } catch (error) {
+        res.status(500).send({ msg: "Error al obtener los departamentos" });
+    }
+    };
+
+    const getMunicipios = async (req, res) => {
+    const departamento = req.params.departamento;
+    try {
+        const municipios = await departamentoMunicipio.find(
+        { departamento },
+        { municipio: 1, _id: 0}
+        );
+        res.status(200).send(municipios);
+    } catch (error) {
+        res.status(500).send({ msg: "Error al obtener los municipios" });
+    }
+};*/
+
+const getDepartamentos = async (req, res) => {
+    try {
+        const departamentos = await departamentoMunicipio.find(
+        {},
+        { departamento: 1, _id: 0 }
+        );
+        const nombresDepartamentos = departamentos.map((item) => item.departamento);
+        res.status(200).send(nombresDepartamentos);
+    } catch (error) {
+        res.status(500).send({ msg: "Error al obtener los departamentos" });
+    }
+};
+
+const getMunicipios = async (req, res) => {
+    const departamento = req.params.departamento;
+    try {
+        const municipios = await departamentoMunicipio.find(
+        { departamento },
+        { municipio: 1, _id: 0 }
+    );
+    const nombresMunicipios = municipios.map((item) => item.municipio);
+    res.status(200).send(nombresMunicipios);
+    } catch (error) {
+        res.status(500).send({ msg: "Error al obtener los municipios" });
+    }
+};
 
 
 module.exports = {
     register,
     login,
-    refreshAccessToken,   
+    refreshAccessToken,
+    getDepartamentos,
+    getMunicipios,
 };

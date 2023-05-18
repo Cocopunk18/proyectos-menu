@@ -18,25 +18,6 @@ app.get("/datosabiertos", async (req, res) => {
         res.status(500).send("Error accediendo al JSON");
     }
 });
-app.get("/departamento/:departamento/municipio/:municipio", async (req, res) => {
-    const { departamento, municipio } = req.params;
-    try {
-        const response = await axios.get(
-        "https://www.datos.gov.co/resource/xdk5-pm3f.json"
-        );
-        const data = response.data;
-        const filteredData = data.filter(
-        (item) => item.departamento === departamento && item.municipio === municipio
-        );
-        const mappedData = filteredData.map((item) => ({
-        municipio: item.municipio,
-        departamento: item.departamento,             
-        }));        
-        res.status(200).json(result);
-    } catch (error) {
-        console.log("Error accediendo al JSON", error);
-        res.status(500).send("Error accediendo al JSON");
-    }
-});
+
 
 module.exports = app;
