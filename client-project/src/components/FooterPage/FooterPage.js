@@ -17,10 +17,10 @@ export const FooterPage = () => {
             <ul className="list-unstyled">
               <li>
                 {" "}
-                <a href="#">Política de privacidad</a>{" "}
+                <a href="https://example.com">Política de privacidad</a>{" "}
               </li>
               <li>
-                <a href="#">Términos y condiciones</a>
+                <a href="https://example.com">Términos y condiciones</a>
               </li>
             </ul>
           </Col>

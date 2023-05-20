@@ -9,7 +9,7 @@ const {
     IP_SERVER,
 } = require("./constants");
 
-const PORT = 3200;
+const PORT = 3000;
 app.get(`/api/${API_VERSION}/auth`, (req, res) => res.send("Hola"));
 console.log(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`);
 mongoose

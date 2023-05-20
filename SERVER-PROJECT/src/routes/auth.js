@@ -10,3 +10,6 @@ api.get("/departamentos", AuthController.getDepartamentos);
 api.get("/municipios/:departamento", AuthController.getMunicipios);
 
 module.exports = api;
+
+
+

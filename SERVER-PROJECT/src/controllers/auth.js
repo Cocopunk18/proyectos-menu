@@ -20,7 +20,7 @@ const register = async (req, res) => {
         lastname,
         email: email.toLowerCase(),
         role: "user",
-        active: false,
+        active: true,
         password: hashPassword,
         departamento,
         municipio,
@@ -77,32 +77,6 @@ function refreshAccessToken(req, res) {
         }
     });
 }
-//departamentos y municipios
-/*const getDepartamentos = async (req, res) => {
-    try {
-        const departamentos = await departamentoMunicipio.find(
-        {},
-        { departamento: 1, _id: 0}
-        );
-        res.status(200).send(departamentos);
-    } catch (error) {
-        res.status(500).send({ msg: "Error al obtener los departamentos" });
-    }
-    };
-
-    const getMunicipios = async (req, res) => {
-    const departamento = req.params.departamento;
-    try {
-        const municipios = await departamentoMunicipio.find(
-        { departamento },
-        { municipio: 1, _id: 0}
-        );
-        res.status(200).send(municipios);
-    } catch (error) {
-        res.status(500).send({ msg: "Error al obtener los municipios" });
-    }
-};*/
-
 const getDepartamentos = async (req, res) => {
     try {
         const departamentos = await departamentoMunicipio.find(
